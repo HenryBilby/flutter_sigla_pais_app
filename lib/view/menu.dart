@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:sigla_pais/view/ajuda.dart';
+import 'package:sigla_pais/view/mensagem.dart';
 import 'package:sigla_pais/view/paises_screen.dart';
-import 'package:sigla_pais/view/pesquisa.dart';
 
-class Menu extends StatelessWidget {
+class Menu extends StatelessWidget with Mensagem {
   // const Menu({Key? key}) : super(key: key);
 
   final TextEditingController search = TextEditingController();
@@ -33,13 +33,13 @@ class Menu extends StatelessWidget {
                                       children: [
                                         Padding(
                                           padding: const EdgeInsets.all(20.0),
-                                          child: TextField( controller: search,
-                                          ),
+                                          child: TextField( controller: search ),
                                         ),
                                         Row(
                                           children: [
                                             TextButton(onPressed: () => {
                                                         Navigator.pop(context),
+                                                        showMensagem("Pesquisa realizada para o país ${search.text}."),
                                                         Navigator.push(context,
                                                             MaterialPageRoute(builder:
                                                                 (BuildContext context) => PaisesScreen(pais: search.text)
@@ -50,7 +50,8 @@ class Menu extends StatelessWidget {
                                                                   style: TextStyle(color: Colors.blueAccent),)
                                             ),
                                             TextButton(onPressed: () => {
-                                                        Navigator.pop(context),
+                                                          Navigator.pop(context),
+                                                          showMensagem("Pesquisa cancelada."),
                                                         },
                                                       child: Text("Cancelar",
                                                                   style: TextStyle(color: Colors.redAccent),)

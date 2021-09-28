@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:sigla_pais/service/requisicao.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 
 class PaisesDados extends StatefulWidget {
 
@@ -84,8 +85,17 @@ class _PaisesDadosState extends State<PaisesDados> {
   List? _filtraPais(String pais, List? paises, BuildContext context) {
     List filtro = [];
 
+    String paisFormatado = pais;
+
+    if (pais.isNotEmpty) {
+      String primeiraLetra = pais.substring(0,1);
+      paisFormatado = pais.replaceFirst(primeiraLetra, primeiraLetra.toUpperCase());
+    }
+
+    print("O pais formatado é: ${paisFormatado}");
+
     paises!.forEach((element) {
-      if (element["name"] == pais) {
+      if (element["name"] == paisFormatado) {
         filtro.add(element);
       }
     });
