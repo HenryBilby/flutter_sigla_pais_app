@@ -1,0 +1,2 @@
+Biblioteca que realiza as requisições HTTP, de consumo de uma API:
+ - https://pub.dev/packages/http;
