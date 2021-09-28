@@ -51,7 +51,7 @@ class _PaisesDadosState extends State<PaisesDados> {
                   child: Card(
                     child: ExpansionTile(
                         title: Text("${paises[index]["name"]}",
-                                    style: TextStyle(color: Colors.blueAccent,
+                                    style: TextStyle(color: Colors.orangeAccent,
                                                      fontWeight: FontWeight.bold,
                                                      fontSize: 20.0),
                                 ),

@@ -4,7 +4,6 @@ import 'package:sigla_pais/view/menu.dart';
 import 'package:sigla_pais/view/paises_dados.dart';
 
 class PaisesScreen extends StatelessWidget {
-  // const ({Key? key}) : super(key: key);
   final String pais;
 
   PaisesScreen({this.pais = ""});
@@ -13,6 +12,7 @@ class PaisesScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: Colors.orangeAccent,
         title: Text("Siglas dos Países"),
         actions: [
           IconButton(onPressed: () => {

@@ -9,6 +9,7 @@ class Ajuda extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: Colors.orangeAccent,
         title: Text("Ajuda"),
       ),
       body: Container(
